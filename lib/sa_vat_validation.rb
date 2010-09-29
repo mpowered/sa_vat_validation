@@ -8,9 +8,16 @@ class Fixnum
   end
 end
 
+class String
+  def is_numeric?
+    Float self rescue false
+  end
+end
+
 class SaVatValidation
   def self.valid?(vat_number)
     digits = vat_number.to_s.split(//).map(&:to_i)
+    return false unless digits.size == 10 && vat_number.to_s.is_numeric?
     check_digit = digits.pop
 
     sum = 0

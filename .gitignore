@@ -1,0 +1,6 @@
+.DS_Store
+.autotest
+pkg/*
+test/*
+bin/*
+*.gemspec

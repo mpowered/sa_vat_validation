@@ -23,13 +23,13 @@ Or install it yourself as:
 Validating a South African VAT number is easy:
 ```ruby
 4023340283.valid_sa_vat_number?
-false
+=> false
 ```
 
 Works on strings too:
 ```ruby
 '4023340283'.valid_sa_vat_number?
-false
+=> false
 ```
 
 ## Development

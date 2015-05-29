@@ -21,11 +21,12 @@ Or install it yourself as:
 ## Usage
 
 Validating a South African VAT number is easy:
-  >> 4023340283.valid_sa_vat_number?
-  => false
+>> 4023340283.valid_sa_vat_number?
+=> false
+
 Works on strings too:
-  >> '4023340283'.valid_sa_vat_number?
-  => false
+>> '4023340283'.valid_sa_vat_number?
+=> false
 
 ## Development
 

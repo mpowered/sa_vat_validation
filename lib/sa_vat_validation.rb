@@ -1,3 +1,6 @@
+require "sa_vat_validation/version"
+require 'active_support/core_ext/string'
+
 class Fixnum
   def last_digit
     self.to_s.last.to_i
@@ -14,10 +17,15 @@ class String
   end
 end
 
-class SaVatValidation
+module SaVatValidation
   def self.valid?(vat_number)
     digits = vat_number.to_s.split(//).map(&:to_i)
+
+    # As per SARS
+    # A VAT Number is a unique number, which comprises of 10 digits and starts with the number 4
+    return false unless digits.first.to_i == 4
     return false unless digits.size == 10 && vat_number.to_s.is_numeric?
+
     check_digit = digits.pop
 
     sum = 0

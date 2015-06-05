@@ -1,12 +1,6 @@
-require 'rubygems'
-require 'rake'
-require 'echoe'
+require "bundler/gem_tasks"
+require "rspec/core/rake_task"
 
-Echoe.new('sa_vat_validation', '0.1.1') do |p|
-  p.description    = "Validate South African VAT numbers easily"
-  p.url            = "http://github.com/mpowered/sa_vat_validation"
-  p.author         = "Gary Greyling"
-  p.email          = "greyling.gary@gmail.co.za"
-  p.ignore_pattern = ["tmp/*", "script/*"]
-  p.development_dependencies = [['activesupport']]
-end
+RSpec::Core::RakeTask.new(:spec)
+
+task :default => :spec

@@ -38,10 +38,10 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  activesupport
+  activesupport (~> 4.2)
   bundler (~> 1.10)
   rake (~> 10.0)
-  rspec
+  rspec (~> 3.2)
   sa_vat_validation!
 
 BUNDLED WITH

@@ -1,14 +1,12 @@
 require "sa_vat_validation/version"
 require 'active_support/core_ext/string'
 
-class Fixnum
-  def last_digit
-    self.to_s.last.to_i
-  end
+def last_digit(a)
+  a.to_s.last.to_i
+end
 
-  def first_digit
-    self.to_s.first.to_i 
-  end
+def first_digit(a)
+  a.to_s.first.to_i
 end
 
 class String
@@ -33,17 +31,17 @@ module SaVatValidation
       if i.even?
         result = digit * 2
         if result >= 10
-          result = result.first_digit + result.last_digit
+          result = first_digit(result) + last_digit(result)
         end
         sum += result
       else
         sum += digit.to_i
       end
     end
-    if sum.last_digit.zero?
-      calculated_digit = sum.last_digit
+    if (last_digit(sum)).zero?
+      calculated_digit = last_digit(sum)
     else
-      calculated_digit = 10 - sum.last_digit
+      calculated_digit = 10 - last_digit(sum)
     end
 
     return check_digit == calculated_digit

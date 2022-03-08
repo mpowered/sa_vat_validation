@@ -1,12 +1,6 @@
 require "sa_vat_validation/version"
 
 
-class String
-  def is_numeric?
-    Float self rescue false
-  end
-end
-
 module SaVatValidation
   def self.valid?(vat_number)
     digits = vat_number.to_s.split(//).map(&:to_i)
@@ -45,10 +39,17 @@ module SaVatValidation
   def self.first_digit(a)
     a.to_s.chars.first.to_i
   end
+class String
+  def valid_sa_vat_number?
+    SaVatValidation::valid?(self)
+  end
+
+  def is_numeric?
+    Float self rescue false
   end
 end
 
-class Object
+class Numeric
   def valid_sa_vat_number?
     SaVatValidation::valid?(self)
   end

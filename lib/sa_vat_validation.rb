@@ -20,15 +20,11 @@ module SaVatValidation
 
         sum += result
       else
-        sum += digit.to_i
+        sum += digit
       end
     end
 
-    if (last_digit(sum)).zero?
-      calculated_digit = last_digit(sum)
-    else
-      calculated_digit = 10 - last_digit(sum)
-    end
+    calculated_digit = last_digit(sum).zero? ? last_digit(sum) : 10 - last_digit(sum)
 
     check_digit == calculated_digit
   end

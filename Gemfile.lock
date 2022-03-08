@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    sa_vat_validation (0.1.4)
+    sa_vat_validation (0.2.0)
 
 GEM
   remote: https://rubygems.org/

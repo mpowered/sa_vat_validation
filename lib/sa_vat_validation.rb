@@ -1,12 +1,5 @@
 require "sa_vat_validation/version"
 
-def last_digit(a)
-  a.to_s.last.to_i
-end
-
-def first_digit(a)
-  a.to_s.first.to_i
-end
 
 class String
   def is_numeric?
@@ -44,6 +37,14 @@ module SaVatValidation
     end
 
     return check_digit == calculated_digit
+
+  def self.last_digit(a)
+    a.to_s.chars.last.to_i
+  end
+
+  def self.first_digit(a)
+    a.to_s.chars.first.to_i
+  end
   end
 end
 

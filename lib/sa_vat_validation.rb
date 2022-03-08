@@ -1,5 +1,4 @@
 require "sa_vat_validation/version"
-require 'active_support/core_ext/string'
 
 def last_digit(a)
   a.to_s.last.to_i
